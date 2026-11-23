@@ -1,0 +1,5 @@
+# Cualquier cambio en pipelines o Dockerfile requiere revisión
+
+./github/workflows/ @jaweewo
+
+Dockerfile @jaweewo
