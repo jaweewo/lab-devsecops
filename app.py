@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # VULNERABILIDAD 1 (Lab 1 - Secreto expuesto en el código):
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-STRIPE_LIVE_KEY = "sk_live_51H8xYz2eZvKYlo2C99999999"
+
 
 
 @app.route("/health")
