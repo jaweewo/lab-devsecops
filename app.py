@@ -24,8 +24,7 @@ def buscar_usuario():
     cursor.execute("CREATE TABLE users (id INT, name TEXT)")
     cursor.execute("INSERT INTO users VALUES (1, 'admin')")
 
-    query = f"SELECT * FROM users WHERE name = '{username}'"
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM users WHERE name = ?", (username,))
     return jsonify({"resultado": cursor.fetchall()})
 
 
@@ -33,7 +32,7 @@ def buscar_usuario():
 @app.route("/ping")
 def ping_host():
     host = request.args.get("host", "127.0.0.1")
-    salida = subprocess.check_output(f"ping -c 1 {host}", shell=True)
+    salida = subprocess.check_output(["ping", "-c", "1", host], shell=False)
     return jsonify({"salida": salida.decode()})
 
 
